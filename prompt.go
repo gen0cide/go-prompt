@@ -99,7 +99,6 @@ func (p *Prompt) Run() {
 		case code := <-exitCh:
 			p.renderer.BreakLine(p.buf)
 			p.tearDown()
-			os.Exit(code)
 		default:
 			time.Sleep(10 * time.Millisecond)
 		}
