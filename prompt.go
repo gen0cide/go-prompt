@@ -97,6 +97,7 @@ func (p *Prompt) Run() {
 			p.renderer.UpdateWinSize(w)
 			p.renderer.Render(p.buf, p.completion)
 		case code := <-exitCh:
+			_ = code
 			p.renderer.BreakLine(p.buf)
 			p.tearDown()
 		default:
